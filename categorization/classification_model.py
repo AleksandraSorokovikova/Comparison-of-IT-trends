@@ -41,6 +41,15 @@ def get_test_loader(test, target_list):
     )
     
     return test_loader
+
+def get_train_loader(train, target_list):
+    train_custom = CustomDataset(train, target_list)
+    train_loader = torch.utils.data.DataLoader(train_custom, 
+        batch_size=128,
+        shuffle=False
+    )
+    
+    return train_loader
     
 class NeuralNetwork(nn.Module):
     def __init__(self):

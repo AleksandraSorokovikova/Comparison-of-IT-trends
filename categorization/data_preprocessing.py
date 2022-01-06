@@ -72,7 +72,7 @@ def vectorize_text(text, word2vec_model):
         for i in range(100):
             text_vector[i] = text_vector[i] / rms 
 
-        return text_vector
+        return np.array(text_vector)
     except:
         pass
 
